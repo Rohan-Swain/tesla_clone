@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer';
 import Header from './Header'
 import Section from './Section'
 
@@ -73,6 +74,7 @@ function Home() {
         <div>
             <Header />
             <Mapping />
+            <Footer />
         </div>
     );
 }
