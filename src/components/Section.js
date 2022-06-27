@@ -32,6 +32,7 @@ const SectionWraper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    scroll-snap-align: start;
 `;
 
 const Intro = styled.div`
@@ -50,6 +51,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    overflow-y: hidden;
 `;
 
 const ButtonContainer = styled.div`

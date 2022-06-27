@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from './Footer';
 import Header from './Header'
 import Section from './Section'
+import styled from 'styled-components';
 
 const arr = [
     {
@@ -71,12 +72,17 @@ function Mapping() {
 
 function Home() {
     return (
-        <div>
+        <HomeWrapper>
             <Header />
             <Mapping />
             <Footer />
-        </div>
+        </HomeWrapper>
     );
 }
 
 export default Home
+
+const HomeWrapper = styled.div`
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+`
