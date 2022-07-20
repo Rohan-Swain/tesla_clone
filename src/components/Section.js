@@ -27,7 +27,7 @@ const SectionWraper = styled.div`
     width: 100vw;
     background-size: cover;
     background-position: center;
-    background-image: url("/images/${props => props.bgImg}");
+    background-image: url("${props => props.bgImg}");
     display: flex;
     flex-direction: column;
     justify-content: space-between;
