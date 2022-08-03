@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Footer() {
     return (
         <FooterWrap>
-            <span>Made By <a href=''>Rohan</a> for Practice Porpose</span>
+            <span>Made By <a href='https://github.com/Rohan-Swain'>Rohan</a> as a Portfolio Project</span>
         </FooterWrap>
     )
 }
