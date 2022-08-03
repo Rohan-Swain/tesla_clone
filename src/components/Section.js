@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Footer from './Footer';
 
-function Section({ title, description, btn1, btn2, bgImg, arr, color }) {
+function Section({ title, description, btn1, btn2, bgImg, arr, color, footer }) {
     return (
         <SectionWraper bgImg={bgImg}>
             <Intro>
@@ -15,6 +16,7 @@ function Section({ title, description, btn1, btn2, bgImg, arr, color }) {
                     {btn2 && <CustomButton color={"black"} bgColor={"white"}>{btn2}</CustomButton>}
                 </ButtonContainer>
                 {arr && <ArrowDown fontSize="large" />}
+                {footer && <Footer />}
             </Container>
         </SectionWraper>
     );

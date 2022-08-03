@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from './Footer';
 import Header from './Header'
 import Section from './Section'
 import styled from 'styled-components';
@@ -52,7 +51,8 @@ const arr = [
         title: "Accessories",
         btn1: "Shop now",
         bgImg: "./images/accessories.jpg",
-        color: "black"
+        color: "black",
+        footer: 'true'
     }
 ];
 
@@ -67,6 +67,7 @@ function Mapping() {
             bgImg={item.bgImg}
             arr={item.arr}
             color={item.color}
+            footer={item.footer}
         />);
 }
 
@@ -75,7 +76,7 @@ function Home() {
         <HomeWrapper>
             <Header />
             <Mapping />
-            <Footer />
+            {/*<Footer />*/}
         </HomeWrapper>
     );
 }
