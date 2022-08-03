@@ -10,7 +10,7 @@ const arr = [
         description: `Order Online for Touchless Delivery`,
         btn1: "Custom Order",
         btn2: "Existing Inventory",
-        bgImg: '/images/model-3.jpg',
+        bgImg: './images/model-3.jpg',
         arr: true
     },
     {
@@ -18,40 +18,40 @@ const arr = [
         description: "Order Online for Touchless Delivery",
         btn1: "Custom Order",
         btn2: "Existing Inventory",
-        bgImg: '/images/model-y.jpg'
+        bgImg: './images/model-y.jpg'
     },
     {
         title: "Model S",
         description: "Order Online for Touchless Delivery",
         btn1: "Custom Order",
         btn2: "Existing Inventory",
-        bgImg: '/images/model-s.jfif'
+        bgImg: './images/model-s.jfif'
     },
     {
         title: "Model X",
         description: "Order Online for Touchless Delivery",
         btn1: "Custom Order",
         btn2: "Existing Inventory",
-        bgImg: '/images/model-x.jfif'
+        bgImg: './images/model-x.jfif'
     },
     {
         title: "Solar Panels",
         description: "Lowest Cost Solar Panels in America",
         btn1: "Order now",
         btn2: "Learn more",
-        bgImg: "/images/solar-panel.jpg"
+        bgImg: "./images/solar-panel.jpg"
     },
     {
         title: "Solar Roof",
         description: "Produce Clean Energy From Your Roof",
         btn1: "Order now",
         btn2: "Learn now",
-        bgImg: "/images/solar-roof.jpg"
+        bgImg: "./images/solar-roof.jpg"
     },
     {
         title: "Accessories",
         btn1: "Shop now",
-        bgImg: "/images/accessories.jpg",
+        bgImg: "./images/accessories.jpg",
         color: "black"
     }
 ];
