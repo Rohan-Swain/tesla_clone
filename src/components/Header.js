@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import LanguageIcon from '@mui/icons-material/Language';
 import CloseIcon from '@mui/icons-material/Close';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 function Header() {
     const [menuStatus, setMenuStatus] = React.useState(false);
@@ -26,37 +27,39 @@ function Header() {
             </RightMenu>
             <SideBarMenu menuStatus={menuStatus}>
                 <CloseButtonWrap>
-                    <CloseIcon style={{ cursor: "pointer" }} fontSize='large' onClick={() => setMenuStatus(false)} />
+                    <CloseIcon className='closeIcon' fontSize='large' onClick={() => setMenuStatus(false)} />
                 </CloseButtonWrap>
-                <MobileDiv>Model S</MobileDiv> 
-                <MobileDiv>Model 3</MobileDiv> 
-                <MobileDiv>Model X</MobileDiv> 
-                <MobileDiv>Model Y</MobileDiv> 
-                <MobileDiv>Solar Panel</MobileDiv> 
-                <MobileDiv>Solar Roof</MobileDiv> 
-                <MobileDiv>Accessories</MobileDiv> 
-                <div>Existing Inventory</div>
-                <div>Used Inventory</div>
-                <div>Trade-In</div>
-                <div>Test Drive</div>
-                <div>Insurance</div>
-                <div>Cybertruck</div>
-                <div>Roadster</div>
-                <div>Semi</div>
-                <div>Charging</div>
-                <div>Powerwall</div>
-                <div>Commercial Energy</div>
-                <div>Utilities</div>
-                <div>Find Us</div>
-                <div>Support</div>
-                <div>Investor Relations</div>
-                <div id='languageWrap'>
-                    <GlobeIcon fontSize="large" />
-                    <div>
-                        <div>United States</div>
-                        <h4>English</h4>
+                <ContentWrapper>
+                    <MobileDiv>Model S</MobileDiv> 
+                    <MobileDiv>Model 3</MobileDiv> 
+                    <MobileDiv>Model X</MobileDiv> 
+                    <MobileDiv>Model Y</MobileDiv> 
+                    <MobileDiv>Solar Panel</MobileDiv> 
+                    <MobileDiv>Solar Roof</MobileDiv> 
+                    <MobileDiv>Accessories</MobileDiv> 
+                    <div>Existing Inventory</div>
+                    <div>Used Inventory</div>
+                    <div>Trade-In</div>
+                    <div>Test Drive</div>
+                    <div>Insurance</div>
+                    <div>Powerwall</div>
+                    <div>Commercial Energy</div>
+                    <div>Utilities</div>
+                    <div>Charging</div>
+                    <div>Find Us</div>
+                    <div>Support</div>
+                    <div>Investor Relations</div>
+                    <MobileDiv>Shop</MobileDiv>
+                    <MobileDiv>Account</MobileDiv>
+                    <MobileDiv className='more'><span>More</span><ArrowForwardIosIcon /></MobileDiv>
+                    <div id='languageWrap'>
+                        <GlobeIcon className='globeIcon' fontSize="large" />
+                        <div>
+                            <div>United States</div>
+                            <h4>English</h4>
+                        </div>
                     </div>
-                </div>
+                </ContentWrapper>
             </SideBarMenu>
         </HeaderWraper>
     );
@@ -139,6 +142,7 @@ const SideBarMenu = styled.div`
     bottom: 0;
     right: 0;
     background-color: white;
+    overflow-y: hidden;
     width: 20em;
     transition: .4s ease all;
     transform: ${props => props.menuStatus ? 'translateX(0)' : 'translateX(100%)'};
@@ -166,6 +170,31 @@ const SideBarMenu = styled.div`
             margin: 0;
         }
     }
+
+    @media(max-width: 1200px) {
+        width: 50em;
+        padding-left: 6em;
+
+        div {
+            padding: 2em 0em;
+        }
+
+        #languageWrap {
+
+            div {
+                font-size: 1.5em;
+            }
+
+            h4 {
+                font-size: 1.2em;
+            }
+
+            .globeIcon {
+                width: 2em;
+                height: 2em;
+            }
+        }
+    }
 `;
 
 const GlobeIcon = styled(LanguageIcon)`
@@ -173,8 +202,22 @@ const GlobeIcon = styled(LanguageIcon)`
 `;
 
 const CloseButtonWrap = styled.div`
+    right: 0;
     padding: 30px !important;
     text-align: end;
+
+    .closeIcon {
+        cursor: pointer;
+        width: 1.8em;
+        height: 1.8em;
+    }
+
+    @media(max-width: 1200px) {
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        margin: 2em 3em;
+    }
 `;
 
 const MobileDiv = styled.div`
@@ -184,3 +227,9 @@ const MobileDiv = styled.div`
         display: block;
     }
 `;
+
+const ContentWrapper = styled.div`
+    margin-top: 10em;
+    height: 100%;
+    padding-bottom: 50em !important;
+`
