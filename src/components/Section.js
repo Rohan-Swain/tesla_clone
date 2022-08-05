@@ -15,7 +15,7 @@ function Section({ title, description, btn1, btn2, bgImg, arr, color, footer }) 
                     <CustomButton color={"white"} bgColor={!color ? "rgba(23, 26, 32, 0.8)" : color}>{btn1}</CustomButton>
                     {btn2 && <CustomButton color={"black"} bgColor={"white"}>{btn2}</CustomButton>}
                 </ButtonContainer>
-                {arr && <ArrowDown fontSize="large" />}
+                {arr && <ArrowDown className='arrow' fontSize="large" />}
                 {footer && <Footer />}
             </Container>
         </SectionWraper>
@@ -25,6 +25,7 @@ function Section({ title, description, btn1, btn2, bgImg, arr, color, footer }) 
 export default Section
 
 const SectionWraper = styled.div`
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -46,7 +47,9 @@ const Intro = styled.div`
         margin-bottom: 10px;
     }
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1000px) {
+        padding-top: 10vh;
+
         h1 {
             font-size: 6em;
             margin-bottom: 0.2em;
@@ -65,13 +68,23 @@ const Container = styled.div`
     align-items: center;
     margin-bottom: 30px;
     overflow-y: hidden;
+
+    @media(max-width: 1000px) {
+        .arrow {
+            position: absolute;
+            bottom: 1em;
+            width: 2.7em;
+            height: 2.7em;
+        }
+    }
 `;
 
 const ButtonContainer = styled.div`
     display: flex;
     margin-bottom: 1.8em;
-    @media (max-width: 1200px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
+        margin-bottom: 11.5em;
     }
 `;
 
@@ -92,10 +105,11 @@ const CustomButton = styled.div`
     margin: 8px;
     font-size: 13px;
 
-    @media (max-width: 1200px) {
-        height: 3.5em;
+    @media (max-width: 1000px) {
+        height: 3.3em;
         width: 80vw;
         font-size: 2em;
+        margin-bottom: 1em;
     }
 `;
 

@@ -51,7 +51,7 @@ function Header() {
                     <div>Investor Relations</div>
                     <MobileDiv>Shop</MobileDiv>
                     <MobileDiv>Account</MobileDiv>
-                    <MobileDiv className='more'><span>More</span><ArrowForwardIosIcon /></MobileDiv>
+                    <MobileDiv className='more'>More<ArrowForwardIosIcon fontSize={window.innerWidth <= 1200 ? 'large' : 'small'} className='arrowforward' /></MobileDiv>
                     <div id='languageWrap'>
                         <GlobeIcon className='globeIcon' fontSize="large" />
                         <div>
@@ -79,7 +79,7 @@ const HeaderWraper = styled.div`
     width: 100vw;
     z-index: 1;
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1000px) {
         height: 7em;
     }
 `;
@@ -88,7 +88,7 @@ const LogoWrap = styled.div`
     margin-left: 60px;
     flex-grow: 1.8;
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1000px) {
         margin: 1.5em 0em 0em 3em;
     }
 `;
@@ -97,6 +97,11 @@ const PageLogo = styled.img`
     width: 120px;
     height: 18px;
     cursor: pointer;
+
+    @media(max-width: 1000px) {
+        width: 18em;
+        height: 2.5em;
+    }
 `;
 
 const RightMenu = styled.div`
@@ -110,6 +115,17 @@ const RightMenu = styled.div`
     }
 
     @media (max-width: 1200px) {
+
+        span {
+            font-size: 1.2em;
+        }
+
+        .hideOnSmallScreen {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
         margin: 1em 3em 0em 0em;
 
         span {
@@ -172,24 +188,31 @@ const SideBarMenu = styled.div`
     }
 
     @media(max-width: 1200px) {
+        width: 30em;
+    }
+
+    @media(max-width: 1000px) {
         width: 50em;
         padding-left: 6em;
 
         div {
-            padding: 2em 0em;
+            padding: 1em 0em;
+            font-size: 1.3em;
         }
 
         #languageWrap {
 
             div {
-                font-size: 1.5em;
-            }
-
-            h4 {
                 font-size: 1.2em;
             }
 
+            h4 {
+                font-size: 1.1em;
+                margin-top: 0.2em;
+            }
+
             .globeIcon {
+                margin-right: 0.5em;
                 width: 2em;
                 height: 2em;
             }
@@ -205,17 +228,23 @@ const CloseButtonWrap = styled.div`
     right: 0;
     padding: 30px !important;
     text-align: end;
+    position: fixed;
 
     .closeIcon {
         cursor: pointer;
-        width: 1.8em;
-        height: 1.8em;
+        width: 1em;
+        height: 1em;
     }
 
     @media(max-width: 1200px) {
-        position: fixed;
+        .closeIcon {
+            width: 2em;
+            height: 2em;
+        }
+    }
+
+    @media(max-width: 1000px) {
         background-color: white;
-        width: 100%;
         margin: 2em 3em;
     }
 `;
@@ -229,7 +258,30 @@ const MobileDiv = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-top: 10em;
+    margin-top: 5em;
     height: 100%;
-    padding-bottom: 50em !important;
+    padding-bottom: 10em !important;
+
+    .more {
+        font-size: 1.1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .arrowforward {
+            margin-right: 2em;
+        }
+    }
+
+    @media(max-width: 1200px) {
+        margin-top: 7em;
+        
+        .more {
+            font-size: 1.8em;
+        }
+
+        .arrowforward {
+            margin-right: 2em;
+        }
+    }
 `
