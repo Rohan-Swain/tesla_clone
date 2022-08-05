@@ -38,12 +38,23 @@ const SectionWraper = styled.div`
 `;
 
 const Intro = styled.div`
-    padding: 15vh;
+    padding-top: 15vh;
     text-align: center;
 
     h1 {
         font-size: 40px;
         margin-bottom: 10px;
+    }
+
+    @media(max-width: 1200px) {
+        h1 {
+            font-size: 6em;
+            margin-bottom: 0.2em;
+        }
+
+        span {
+            font-size: 2.5em;
+        }
     }
 `;
 
@@ -59,7 +70,7 @@ const Container = styled.div`
 const ButtonContainer = styled.div`
     display: flex;
     margin-bottom: 1.8em;
-    @media (max-width: 600px) {
+    @media (max-width: 1200px) {
         flex-direction: column;
     }
 `;
@@ -80,8 +91,11 @@ const CustomButton = styled.div`
     border-radius: 100px;
     margin: 8px;
     font-size: 13px;
-    @media (max-width: 600px) {
+
+    @media (max-width: 1200px) {
+        height: 3.5em;
         width: 80vw;
+        font-size: 2em;
     }
 `;
 

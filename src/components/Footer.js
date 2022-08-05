@@ -20,4 +20,10 @@ const FooterWrap = styled.div`
     font-size: 0.9em;
     letter-spacing: 2px;
     font-weight: normal;
+
+    @media(max-width: 1200px) {
+        span {
+            font-size: 1.6em;
+        }
+    }
 `;

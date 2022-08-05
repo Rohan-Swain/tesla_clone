@@ -28,6 +28,13 @@ function Header() {
                 <CloseButtonWrap>
                     <CloseIcon style={{ cursor: "pointer" }} fontSize='large' onClick={() => setMenuStatus(false)} />
                 </CloseButtonWrap>
+                <MobileDiv>Model S</MobileDiv> 
+                <MobileDiv>Model 3</MobileDiv> 
+                <MobileDiv>Model X</MobileDiv> 
+                <MobileDiv>Model Y</MobileDiv> 
+                <MobileDiv>Solar Panel</MobileDiv> 
+                <MobileDiv>Solar Roof</MobileDiv> 
+                <MobileDiv>Accessories</MobileDiv> 
                 <div>Existing Inventory</div>
                 <div>Used Inventory</div>
                 <div>Trade-In</div>
@@ -68,11 +75,19 @@ const HeaderWraper = styled.div`
     justify-content: space-between;
     width: 100vw;
     z-index: 1;
+
+    @media(max-width: 1200px) {
+        height: 7em;
+    }
 `;
 
 const LogoWrap = styled.div`
     margin-left: 60px;
     flex-grow: 1.8;
+
+    @media(max-width: 1200px) {
+        margin: 1.5em 0em 0em 3em;
+    }
 `;
 
 const PageLogo = styled.img`
@@ -82,6 +97,7 @@ const PageLogo = styled.img`
 `;
 
 const RightMenu = styled.div`
+    height: 100%;
     margin-right: 60px;
 
     span {
@@ -90,8 +106,14 @@ const RightMenu = styled.div`
         cursor: pointer;
     }
 
-    .hideOnSmallScreen {
-        @media (max-width: 1200px) {
+    @media (max-width: 1200px) {
+        margin: 1em 3em 0em 0em;
+
+        span {
+            font-size: 2.5em;
+        }
+
+        .hideOnSmallScreen {
             display: none;
         }
     }
@@ -153,4 +175,12 @@ const GlobeIcon = styled(LanguageIcon)`
 const CloseButtonWrap = styled.div`
     padding: 30px !important;
     text-align: end;
+`;
+
+const MobileDiv = styled.div`
+    display: none;
+    
+    @media(max-width: 1200px) {
+        display: block;
+    }
 `;
