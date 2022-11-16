@@ -10,7 +10,7 @@ function Header() {
     return (
         <HeaderWraper>
             <LogoWrap>
-                <PageLogo src= './images/logo.svg' />
+                <PageLogo src= './images/logo.svg' alt='tesla logo' />
             </LogoWrap>
             <MiddleMenu>
                 <span>Model S</span>
